@@ -1,0 +1,42 @@
+{
+  "extends": ["xo-react"],
+  "envs": ["browser", "es2022"],
+  "space": 2,
+  "semicolon": false,
+  "prettier": true,
+  "rules": {
+    "import/extensions": "off",
+    "import/order": [
+      "error",
+      {
+        "alphabetize": { "order": "asc", "orderImportKind": "asc", "caseInsensitive": true }
+      }
+    ],
+    "n/file-extension-in-import": "off",
+    "no-console": "error",
+    "react/boolean-prop-naming": [
+      "error",
+      {
+        "rule": "^(is|has|should|can)[A-Z]([A-Za-z0-9]?)+",
+        "validateNested": true
+      }
+    ],
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }],
+    "react/react-in-jsx-scope": "off"
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "rules": {
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "variableLike",
+            "format": ["strictCamelCase", "UPPER_CASE", "PascalCase"],
+            "leadingUnderscore": "allow"
+          }
+        ]
+      }
+    }
+  ]
+}
